@@ -1,0 +1,48 @@
+Last login: Thu Jun  8 11:46:53 on ttys000
+mac@Macs-MacBook-Pro ~ % bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ pwd
+/Users/mac
+bash-3.2$ cd Desktop/golang
+bash-3.2$ pwd
+/Users/mac/Desktop/golang
+bash-3.2$ ls
+Dars		challange	tasklar		vazifas
+bash-3.2$ cd tasklar
+bash-3.2$ touch main.go
+bash-3.2$ git init
+Initialized empty Git repository in /Users/mac/Desktop/golang/tasklar/.git/
+bash-3.2$ nano main.go
+
+
+
+
+
+
+  UW PICO 5.09                     File: main.go                      Modified  
+
+package main
+
+import "fmt"
+
+func main()  { 
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
