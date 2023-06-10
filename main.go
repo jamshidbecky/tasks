@@ -2,7 +2,12 @@ package main
 
 import (
 	"fmt"
+	"bufio"
+	"os"
+	"strings"
 )
+
+// ********************************************************
 
 // func main() {
 // 	var number int
@@ -24,14 +29,44 @@ import (
 	
 // }
 
-func main() {
-	var str1, str2 string
+// ********************************************************
 
-	fmt.Scanln(&str1)
-	fmt.Scanln(&str2)
+// func main() {
+// 	var str1, str2 string
 
-	res := str1[:len(str1) / 2] + str2 + str1[:len(str1) / 2]
+// 	fmt.Scanln(&str1)
+// 	fmt.Scanln(&str2)
 
-	fmt.Println(res)
+// 	res := str1[:len(str1) / 2] + str2 + str1[:len(str1) / 2]
 
+// 	fmt.Println(res)
+
+// }
+
+// ********************************************************
+
+func main()  {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Ma'lumotni kiriting: ")
+	data, _ := reader.ReadString('\n')
+	data = strings.TrimSpace(data)
+	dataLength := len(data)
+
+	reversed := reverseString(data)
+
+	if dataLength % 4 == 0 {
+		data = data[:dataLength / 2] + reversed[:dataLength / 2]
+		fmt.Println(data)
+	}
 }
+
+func reverseString(input string) string {
+	runes := []rune(input)
+	length := len(runes)
+	for i, j := 0, length-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+// ********************************************************
