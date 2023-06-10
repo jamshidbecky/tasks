@@ -151,15 +151,34 @@ import (
 
 // ********************************************************
 
-func main()  {
+// func main()  {
+// 	inputReader := bufio.NewReader(os.Stdin)
+// 	matn, _ := inputReader.ReadString('\n')
+// 	matn = strings.TrimSpace(matn)
+	
+// 	var num int
+// 	fmt.Scanln(&num)
+
+// 	res := matn[:num] + matn[(num + 1):]
+
+// 	fmt.Println(res)
+// }
+
+// ********************************************************
+
+func main() {
 	inputReader := bufio.NewReader(os.Stdin)
 	matn, _ := inputReader.ReadString('\n')
 	matn = strings.TrimSpace(matn)
-	
-	var num int
-	fmt.Scanln(&num)
 
-	res := matn[:num] + matn[(num + 1):]
+	runeMatn := []rune(matn)
+	fmt.Println(runeMatn)
 
-	fmt.Println(res)
+	for i := 0; i < len(runeMatn); i++ {
+		if runeMatn[i] >= 48 && runeMatn[i] <= 57 {
+			fmt.Printf("%v-indexda raqam bor\n", i)
+		} else {
+			fmt.Println("textda raqam qatnashmagan")
+		}
+	} 
 }
