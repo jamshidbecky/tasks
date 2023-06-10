@@ -166,19 +166,40 @@ import (
 
 // ********************************************************
 
-func main() {
+// func main() {
+// 	inputReader := bufio.NewReader(os.Stdin)
+// 	matn, _ := inputReader.ReadString('\n')
+// 	matn = strings.TrimSpace(matn)
+
+// 	runeMatn := []rune(matn)
+// 	fmt.Println(runeMatn)
+
+// 	for i := 0; i < len(runeMatn); i++ {
+// 		if runeMatn[i] >= 48 && runeMatn[i] <= 57 {
+// 			fmt.Printf("%v-indexda raqam bor\n", i)
+// 		} else {
+// 			fmt.Println("textda raqam qatnashmagan")
+// 		}
+// 	} 
+// }
+
+// ********************************************************
+
+func main()  {
+	var arr []string
+	var word string
 	inputReader := bufio.NewReader(os.Stdin)
 	matn, _ := inputReader.ReadString('\n')
 	matn = strings.TrimSpace(matn)
 
-	runeMatn := []rune(matn)
-	fmt.Println(runeMatn)
+	for _, val := range matn {
+		word += string(val)
 
-	for i := 0; i < len(runeMatn); i++ {
-		if runeMatn[i] >= 48 && runeMatn[i] <= 57 {
-			fmt.Printf("%v-indexda raqam bor\n", i)
-		} else {
-			fmt.Println("textda raqam qatnashmagan")
+		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
+			arr = append(arr, word)
+			word = ""
 		}
-	} 
+	}
+	fmt.Println(arr[0])
+	fmt.Println(arr[len(arr) - 1])
 }
