@@ -90,16 +90,39 @@ import (
 
 // ********************************************************
 
-func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Ma'lumotni kiriting:")
-	data, _ := reader.ReadString('\n')
-	data = strings.TrimSpace(data)
-	count := 0
-	for _, val := range data {
-		if val == 'a' || val == 'A' {
-			count  += 1
+// func main() {
+// 	reader := bufio.NewReader(os.Stdin)
+// 	fmt.Print("Ma'lumotni kiriting:")
+// 	data, _ := reader.ReadString('\n')
+// 	data = strings.TrimSpace(data)
+// 	count := 0
+// 	for _, val := range data {
+// 		if val == 'a' || val == 'A' {
+// 			count  += 1
+// 		}
+// 	}
+// 	fmt.Println(count)
+// }
+
+// ********************************************************
+
+func main()  {
+	var arr []string
+	var word string
+
+	inputReader := bufio.NewReader(os.Stdin)
+	matn, _ := inputReader.ReadString('\n')
+	matn = strings.TrimSpace(matn)
+
+	for _, val := range matn {
+		word += string(val)
+
+		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
+			arr = append(arr, word)
+			word = ""
 		}
 	}
-	fmt.Println(count)
+
+	fmt.Println(len(arr))
+
 }
