@@ -45,28 +45,45 @@ import (
 
 // ********************************************************
 
-func main()  {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Ma'lumotni kiriting: ")
-	data, _ := reader.ReadString('\n')
-	data = strings.TrimSpace(data)
-	dataLength := len(data)
+// func main()  {
+// 	reader := bufio.NewReader(os.Stdin)
+// 	fmt.Print("Ma'lumotni kiriting: ")
+// 	data, _ := reader.ReadString('\n')
+// 	data = strings.TrimSpace(data)
+// 	dataLength := len(data)
 
-	reversed := reverseString(data)
+// 	reversed := reverseString(data)
 
-	if dataLength % 4 == 0 {
-		data = data[:dataLength / 2] + reversed[:dataLength / 2]
-		fmt.Println(data)
-	}
-}
+// 	if dataLength % 4 == 0 {
+// 		data = data[:dataLength / 2] + reversed[:dataLength / 2]
+// 		fmt.Println(data)
+// 	}
+// }
 
-func reverseString(input string) string {
-	runes := []rune(input)
-	length := len(runes)
-	for i, j := 0, length-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
-	}
-	return string(runes)
-}
+// func reverseString(input string) string {
+// 	runes := []rune(input)
+// 	length := len(runes)
+// 	for i, j := 0, length-1; i < j; i, j = i+1, j-1 {
+// 		runes[i], runes[j] = runes[j], runes[i]
+// 	}
+// 	return string(runes)
+// }
 
 // ********************************************************
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Ma'lumotni kiriting:")
+	data, _ := reader.ReadString('\n')
+	data = strings.TrimSpace(data)
+
+	runeDate := []rune(data)
+	
+	for i := 0; i < len(runeDate); i++ {
+		if i == 0 || i == len(runeDate) - 1 {
+			runeDate[i] = runeDate[i] - 32
+		}
+	}
+
+	fmt.Println(string(runeDate))
+}
