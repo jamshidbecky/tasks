@@ -106,23 +106,47 @@ import (
 
 // ********************************************************
 
-func main()  {
-	var arr []string
-	var word string
+// func main()  {
+// 	var arr []string
+// 	var word string
 
+// 	inputReader := bufio.NewReader(os.Stdin)
+// 	matn, _ := inputReader.ReadString('\n')
+// 	matn = strings.TrimSpace(matn)
+
+// 	for _, val := range matn {
+// 		word += string(val)
+
+// 		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
+// 			arr = append(arr, word)
+// 			word = ""
+// 		}
+// 	}
+// 	fmt.Println(len(arr))
+// }
+
+// ********************************************************
+
+func main()  {
 	inputReader := bufio.NewReader(os.Stdin)
 	matn, _ := inputReader.ReadString('\n')
 	matn = strings.TrimSpace(matn)
 
-	for _, val := range matn {
-		word += string(val)
+	runeMatn := []rune(matn)
 
-		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
-			arr = append(arr, word)
-			word = ""
-		}
+	for i := 0; i < len(runeMatn); i++ {
+		if i % 2 == 0 {
+			if runeMatn[i] >= 97 && runeMatn[i] <= 122 {
+				runeMatn[i] = runeMatn[i] - 32
+			} 
+		} else {
+			if runeMatn[i] >= 65 && runeMatn[i] <= 90 {
+				runeMatn[i] = runeMatn[i] + 32
+			}
+		} 
 	}
-
-	fmt.Println(len(arr))
-
+	
+	fmt.Println(string(runeMatn))
 }
+
+// ********************************************************
