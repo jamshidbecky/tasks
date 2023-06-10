@@ -127,26 +127,39 @@ import (
 
 // ********************************************************
 
+// func main()  {
+// 	inputReader := bufio.NewReader(os.Stdin)
+// 	matn, _ := inputReader.ReadString('\n')
+// 	matn = strings.TrimSpace(matn)
+
+// 	runeMatn := []rune(matn)
+
+// 	for i := 0; i < len(runeMatn); i++ {
+// 		if i % 2 == 0 {
+// 			if runeMatn[i] >= 97 && runeMatn[i] <= 122 {
+// 				runeMatn[i] = runeMatn[i] - 32
+// 			} 
+// 		} else {
+// 			if runeMatn[i] >= 65 && runeMatn[i] <= 90 {
+// 				runeMatn[i] = runeMatn[i] + 32
+// 			}
+// 		} 
+// 	}
+	
+// 	fmt.Println(string(runeMatn))
+// }
+
+// ********************************************************
+
 func main()  {
 	inputReader := bufio.NewReader(os.Stdin)
 	matn, _ := inputReader.ReadString('\n')
 	matn = strings.TrimSpace(matn)
-
-	runeMatn := []rune(matn)
-
-	for i := 0; i < len(runeMatn); i++ {
-		if i % 2 == 0 {
-			if runeMatn[i] >= 97 && runeMatn[i] <= 122 {
-				runeMatn[i] = runeMatn[i] - 32
-			} 
-		} else {
-			if runeMatn[i] >= 65 && runeMatn[i] <= 90 {
-				runeMatn[i] = runeMatn[i] + 32
-			}
-		} 
-	}
 	
-	fmt.Println(string(runeMatn))
-}
+	var num int
+	fmt.Scanln(&num)
 
-// ********************************************************
+	res := matn[:num] + matn[(num + 1):]
+
+	fmt.Println(res)
+}
