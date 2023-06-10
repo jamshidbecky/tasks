@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"bufio"
-	"os"
-	"strings"
+	// "bufio"
+	// "os"
+	// "strings"
 )
 
 // ********************************************************
@@ -185,21 +185,41 @@ import (
 
 // ********************************************************
 
+// func main()  {
+// 	var arr []string
+// 	var word string
+// 	inputReader := bufio.NewReader(os.Stdin)
+// 	matn, _ := inputReader.ReadString('\n')
+// 	matn = strings.TrimSpace(matn)
+
+// 	for _, val := range matn {
+// 		word += string(val)
+
+// 		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
+// 			arr = append(arr, word)
+// 			word = ""
+// 		}
+// 	}
+// 	fmt.Println(arr[0])
+// 	fmt.Println(arr[len(arr) - 1])
+// }
+
+// ********************************************************
+
 func main()  {
-	var arr []string
-	var word string
-	inputReader := bufio.NewReader(os.Stdin)
-	matn, _ := inputReader.ReadString('\n')
-	matn = strings.TrimSpace(matn)
+	matn := "akaaka"
 
-	for _, val := range matn {
-		word += string(val)
+	fmt.Println(palindrome(matn))
+}
 
-		if string(val) == " " || string(val) == "." || string(val) == "!" || string(val) == "?" {
-			arr = append(arr, word)
-			word = ""
+func palindrome(s string) bool {
+	for i, j := 0, len(s) - 1; i < len(s) / 2; i, j = i + 1, j - 1 {
+		if s[i] != s[j] {
+			return false
+			break
 		}
 	}
-	fmt.Println(arr[0])
-	fmt.Println(arr[len(arr) - 1])
+	return true
 }
+
+// ********************************************************
