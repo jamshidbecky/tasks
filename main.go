@@ -71,19 +71,35 @@ import (
 
 // ********************************************************
 
+// func main() {
+// 	reader := bufio.NewReader(os.Stdin)
+// 	fmt.Print("Ma'lumotni kiriting:")
+// 	data, _ := reader.ReadString('\n')
+// 	data = strings.TrimSpace(data)
+
+// 	runeDate := []rune(data)
+	
+// 	for i := 0; i < len(runeDate); i++ {
+// 		if i == 0 || i == len(runeDate) - 1 {
+// 			runeDate[i] = runeDate[i] - 32
+// 		}
+// 	}
+
+// 	fmt.Println(string(runeDate))
+// }
+
+// ********************************************************
+
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Ma'lumotni kiriting:")
 	data, _ := reader.ReadString('\n')
 	data = strings.TrimSpace(data)
-
-	runeDate := []rune(data)
-	
-	for i := 0; i < len(runeDate); i++ {
-		if i == 0 || i == len(runeDate) - 1 {
-			runeDate[i] = runeDate[i] - 32
+	count := 0
+	for _, val := range data {
+		if val == 'a' || val == 'A' {
+			count  += 1
 		}
 	}
-
-	fmt.Println(string(runeDate))
+	fmt.Println(count)
 }
