@@ -296,17 +296,40 @@ import (
 
 // ********************************************************
 
+// func main()  {
+// 	// nums := [5]int {57, 92, 65, 32, 76}
+	
+// 	fmt.Println(reverseArray([]int{57, 92, 65, 32, 76}))
+// }
+
+// func reverseArray(normArr []int) (revNormArr []int) {
+// 	for i := len(normArr) - 1; i >= 0; i -= 1 {
+// 		revNormArr = append(revNormArr, normArr[i])	
+// 	}
+
+// 	return revNormArr
+// }
+
+// ********************************************************
 
 func main()  {
-	// nums := [5]int {57, 92, 65, 32, 76}
-	
-	fmt.Println(reverseArray([]int{57, 92, 65, 32, 76}))
+
+	fmt.Println(minArrCount([]int{5, 4, 31, 1, 34, 3, 10, 9, 0, 0, 0, 4,}))
+
 }
 
-func reverseArray(normArr []int) (revNormArr []int) {
-	for i := len(normArr) - 1; i >= 0; i -= 1 {
-		revNormArr = append(revNormArr, normArr[i])	
-	}
+func minArrCount(arrInt []int) (min, count int)  {
+	min = arrInt[0]
 
-	return revNormArr
+	for _, v := range arrInt {
+		if v < min {
+			min = v
+			count = 0
+		}
+
+		if min == v {
+			count++
+		}
+	}
+	return min, count
 }
