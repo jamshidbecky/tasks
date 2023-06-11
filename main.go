@@ -261,17 +261,37 @@ import (
 
 // ********************************************************
 
+// func main()  {
+// 	var num1, num2 int 
+// 	fmt.Scanln(&num1)
+// 	fmt.Scanln(&num2)
+	
+// 	fmt.Println(fromToSqr(num1, num2))
+// }
+
+// func fromToSqr(a, b int) (sqrArr []int) {
+// 	for ; a <= b; a += 1 {
+// 		sqrArr = append(sqrArr, a * a)
+// 	}
+// 	return sqrArr
+// }
+
+// ********************************************************
+
 func main()  {
-	var num1, num2 int 
+	var num1, num2 int
+
 	fmt.Scanln(&num1)
 	fmt.Scanln(&num2)
-	
-	fmt.Println(fromToSqr(num1, num2))
+
+	fmt.Println(fromToSum(num1, num2))
 }
 
-func fromToSqr(a, b int) (sqrArr []int) {
+func fromToSum(a, b int) (sum int) {
 	for ; a <= b; a += 1 {
-		sqrArr = append(sqrArr, a * a)
+		sum += a
 	}
-	return sqrArr
+	return sum
 }
+
+// ********************************************************
