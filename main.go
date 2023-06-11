@@ -206,20 +206,41 @@ import (
 
 // ********************************************************
 
-func main()  {
-	matn := "akaaka"
+// func main()  {
+// 	matn := "akaaka"
 
-	fmt.Println(palindrome(matn))
+// 	fmt.Println(palindrome(matn))
+// }
+
+// func palindrome(s string) bool {
+// 	for i, j := 0, len(s) - 1; i < len(s) / 2; i, j = i + 1, j - 1 {
+// 		if s[i] != s[j] {
+// 			return false
+// 			break
+// 		}
+// 	}
+// 	return true
+// }
+
+// ********************************************************
+
+func main() {
+	var num int
+	fmt.Scanln(&num)
+	fmt.Println(decToBin(num))
 }
 
-func palindrome(s string) bool {
-	for i, j := 0, len(s) - 1; i < len(s) / 2; i, j = i + 1, j - 1 {
-		if s[i] != s[j] {
-			return false
-			break
+func decToBin(number int) (total string){
+	for number > 0 {
+		if number % 2 == 0 {
+			total = "0" + total
+			number = number / 2
+		} else {
+			total = "1" + total
+			number = number / 2
 		}
 	}
-	return true
+	return total
 }
 
 // ********************************************************
