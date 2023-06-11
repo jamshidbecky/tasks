@@ -224,23 +224,37 @@ import (
 
 // ********************************************************
 
+// func main() {
+// 	var num int
+// 	fmt.Scanln(&num)
+// 	fmt.Println(decToBin(num))
+// }
+
+// func decToBin(number int) (total string){
+// 	for number > 0 {
+// 		if number % 2 == 0 {
+// 			total = "0" + total
+// 			number = number / 2
+// 		} else {
+// 			total = "1" + total
+// 			number = number / 2
+// 		}
+// 	}
+// 	return total
+// }
+
+// ********************************************************
+
 func main() {
 	var num int
 	fmt.Scanln(&num)
-	fmt.Println(decToBin(num))
+
+	fmt.Println(sqrN(num))
 }
 
-func decToBin(number int) (total string){
-	for number > 0 {
-		if number % 2 == 0 {
-			total = "0" + total
-			number = number / 2
-		} else {
-			total = "1" + total
-			number = number / 2
-		}
-	}
-	return total
+func sqrN(number int) (sqrArr []int) {
+	for i := 1; i <= number; i += 1 {
+		sqrArr = append(sqrArr, i * i)
+	} 
+	return sqrArr
 }
-
-// ********************************************************
