@@ -278,20 +278,35 @@ import (
 
 // ********************************************************
 
-func main()  {
-	var num1, num2 int
+// func main()  {
+// 	var num1, num2 int
 
-	fmt.Scanln(&num1)
-	fmt.Scanln(&num2)
+// 	fmt.Scanln(&num1)
+// 	fmt.Scanln(&num2)
 
-	fmt.Println(fromToSum(num1, num2))
-}
+// 	fmt.Println(fromToSum(num1, num2))
+// }
 
-func fromToSum(a, b int) (sum int) {
-	for ; a <= b; a += 1 {
-		sum += a
-	}
-	return sum
-}
+// func fromToSum(a, b int) (sum int) {
+// 	for ; a <= b; a += 1 {
+// 		sum += a
+// 	}
+// 	return sum
+// }
 
 // ********************************************************
+
+
+func main()  {
+	// nums := [5]int {57, 92, 65, 32, 76}
+	
+	fmt.Println(reverseArray([]int{57, 92, 65, 32, 76}))
+}
+
+func reverseArray(normArr []int) (revNormArr []int) {
+	for i := len(normArr) - 1; i >= 0; i -= 1 {
+		revNormArr = append(revNormArr, normArr[i])	
+	}
+
+	return revNormArr
+}
